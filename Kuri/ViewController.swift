@@ -47,17 +47,25 @@ class ViewController: UIViewController {
             
         }
         
+        let session = AVAudioSession.sharedInstance()
         // オーディオ周りの認証要求
-        AVAudioSession.sharedInstance().requestRecordPermission {_ in
+        session.requestRecordPermission {_ in
             do {
                 // bluetooth機器として設定
-                try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.allowBluetooth)
-                try AVAudioSession.sharedInstance().overrideOutputAudioPort(.none)
-                try AVAudioSession.sharedInstance().setActive(true)
+                try session.setCategory(.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.allowBluetoothA2DP)
+                try session.overrideOutputAudioPort(.none)
+                try session.setActive(true)
             } catch {
-            }
-            
+            }            
         }
+        
+        // Bluetoothイヤホンを使っているとしてもiPhoneビルトインのマイクを使う
+        for portDesc in session.availableInputs! {
+            if(portDesc.portType == AVAudioSession.Port.builtInMic) {
+                try! session.setPreferredInput(portDesc)
+            }
+        }
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
