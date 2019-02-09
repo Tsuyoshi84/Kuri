@@ -12,6 +12,7 @@
 		4821B1A821F71505002B78B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4821B1A621F71505002B78B9 /* Main.storyboard */; };
 		4821B1AA21F71506002B78B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4821B1A921F71506002B78B9 /* Assets.xcassets */; };
 		4821B1AD21F71506002B78B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4821B1AB21F71506002B78B9 /* LaunchScreen.storyboard */; };
+		4821B1B621F71D69002B78B9 /* beep-02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4821B1B521F71D69002B78B9 /* beep-02.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4821B1A921F71506002B78B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4821B1AC21F71506002B78B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4821B1AE21F71506002B78B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4821B1B521F71D69002B78B9 /* beep-02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-02.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		4821B1A121F71505002B78B9 /* Kuri */ = {
 			isa = PBXGroup;
 			children = (
+				4821B1B421F71CE4002B78B9 /* Sounds */,
 				4821B1A221F71505002B78B9 /* AppDelegate.swift */,
 				4821B1A421F71505002B78B9 /* ViewController.swift */,
 				4821B1A621F71505002B78B9 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				4821B1AE21F71506002B78B9 /* Info.plist */,
 			);
 			path = Kuri;
+			sourceTree = "<group>";
+		};
+		4821B1B421F71CE4002B78B9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4821B1B521F71D69002B78B9 /* beep-02.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4821B1B621F71D69002B78B9 /* beep-02.mp3 in Resources */,
 				4821B1AD21F71506002B78B9 /* LaunchScreen.storyboard in Resources */,
 				4821B1AA21F71506002B78B9 /* Assets.xcassets in Resources */,
 				4821B1A821F71505002B78B9 /* Main.storyboard in Resources */,
