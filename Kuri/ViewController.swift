@@ -104,6 +104,7 @@ class ViewController: UIViewController {
         var enabledLevelMeter: UInt32 = 1
         AudioQueueSetProperty(self.queue, kAudioQueueProperty_EnableLevelMetering, &enabledLevelMeter, UInt32(MemoryLayout<UInt32>.size))
         
+        // 10ms周期で音量の検出を繰り返し行う
         self.timer = Timer.scheduledTimer(timeInterval: 0.01,
                                           target: self,
                                           selector: #selector(ViewController.detectVolume(_:)),
@@ -155,7 +156,7 @@ class ViewController: UIViewController {
         // タイマーを止めて、開始から停止までの時間を表示する
         if let time = startTime {
             let elapsed = -time.timeIntervalSinceNow
-            timeTextField.text = "".appendingFormat("%.2f", elapsed)
+            timeTextField.text = "".appendingFormat("%.3f", elapsed)
             print(elapsed)
             startTime = nil
         }
